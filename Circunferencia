@@ -1,0 +1,19 @@
+// areatriangulo.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+	{
+		float radio,area,PI=3.141516;
+		cout<<"ingresar radio: ";
+		cin>>radio;
+		//area= PI*radio*radio;
+		area=PI*radio*radio;
+		cout<<"el area de la Circunferencia es: "<<area;
+		getch();
+	}
