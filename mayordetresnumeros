@@ -1,0 +1,28 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int a,b,c,mayor;
+	cout<< "Ingrese a:	\n";
+	cin>> a;
+	cout<< "Ingrese b"<<endl ;
+	cin>> b;
+	cout<< "Ingrese c \n";
+	cin>> c;
+	if (a>b)
+		if(a>c)
+			mayor=a;
+		else 
+			mayor=c;
+	else 
+		if (b>c)
+			mayor=b;
+		else
+			mayor=c;
+	cout<< "El mayor es: "<<mayor;
+	getch();
+}
