@@ -13,30 +13,36 @@ void main()
 	float A,B,C,X1,X2,XR,XI,X,D;
 	cout<<"Ingrese A: ";
 	cin>> A;
-	cout<<"Ingrese B: ";
-	cin>> B;
-	cout<<"Ingrese C: ";
-	cin>> C;
-	D=pow(B,2)-4*A*C;
-	if (D>=0)
-		if (D==0)
-		{	
-			X=-B/(2*A);
-			cout<<"Solucion unica: "<<X;
-		}
-		else
-		{
-			X1=-B+sqrt(D)/(2*A);
-			X2=-B-sqrt(D)/(2*A);
-			cout<<"Solucion Real 1: "<<X1;
-			cout<<"Solucion Real 2: "<<X2;
-		}
-	else
+	if (A != 0)
 	{
-		XR=-B/(2*A);
-		XI=sqrt(-D)/(2*A);
-		cout<<"La solucion imaginaria 1 es :"<<XR<<"+"<<XI<<"i";
-		cout<<"La solucion imaginaria 2 es :"<<XR<<"-"<<XI<<"i";
+		
+		cout<<"Ingrese B: ";
+		cin>> B;
+		cout<<"Ingrese C: ";
+		cin>> C;
+		D=pow(B,2)-4*A*C;
+			if (D>=0)
+				if (D==0)
+				{	
+					X=-B/(2*A);
+					cout<<"Solucion unica: "<<X;
+				}
+				else
+				{
+					X1=-B+sqrt(D)/(2*A);
+					X2=-B-sqrt(D)/(2*A);
+					cout<<"Solucion Real 1: "<<X1;
+					cout<<"Solucion Real 2: "<<X2;
+				}
+			else
+			{
+				XR=-B/(2*A);
+				XI=sqrt(-D)/(2*A);
+				cout<<"La solucion imaginaria 1 es :"<<XR<<"+"<<XI<<"i";
+				cout<<"La solucion imaginaria 2 es :"<<XR<<"-"<<XI<<"i";
+			}
 	}
+	else 
+		cout<<"El valor de A no puede ser 0.";
 	getch();
 }
