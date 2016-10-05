@@ -18,6 +18,7 @@ void main()
 	cin>> n;
 	for(i=1;i<=n;i++)
 	{
+		cout<<"ingrese los datos del estudiante: "<<i<<endl;
 		cout<< " ID: ";
 	    cin>> id;
 		cout<< " Introduzca la nota practica: " ;
