@@ -1,0 +1,60 @@
+// burbuja.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+using namespace std;
+
+void cargarvector(float a[], int tam);
+void mostrarvector (float a[], int tam);
+void burbuja (float a[], int tam);
+
+void main()
+{
+	int tam;
+	float a[MAX];
+
+	do
+	{
+		cout<<"Introduzca un tamanho del vector entre [0,100]: ";
+		cin>>tam;
+	}
+	while (tam<0 || tam>MAX);
+	cargarvector (a,tam);
+	burbuja(a,tam);
+	mostrarvector (a,tam);
+	getch();
+}
+
+void burbuja(float a[], int tam)
+{	float aux;
+	for (int i=0;i<tam-1;i++)
+	{
+		for (int j=i+1;j<tam;j++)
+		{
+			if (a[i]<a[j])
+			 {
+				 aux=a[i];
+				a[i]=a[j];
+				a[j]=aux;
+			}
+		}
+	
+	}
+}
+void cargarvector(float a[],int tam)
+{
+	for(int i=0;i<tam;i++)
+	{
+	cout<<"Ingrese el valor de a["<<i<<"]: ";
+	cin>>a[i];
+	}
+}
+void mostrarvector(float a[], int tam)
+{
+	for(int i=0;i<tam;i++)
+	{cout<<"a["<<i<<"]= "<<a[i]<<endl;
+	}
+}
