@@ -1,0 +1,23 @@
+// Proyectopapiburguer.cpp : Defines the entry point for the console application.
+//
+//
+// Profe se me borro el avance con estas maquinas, la idea es que el cliente entre al programa y pueda armar su propia hamburguesa o elegir una pre armada del menu
+//
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+using namespace std;
+
+void main
+{	
+	char a[MAX], tam;
+	cout <<"Bienvenido a Papi's Burger \n";
+	cout <<"Usted puede armar su hamburguesa al gusto! o si gusta elegir de nuestro menu:\n";
+	cout <<"1. Armar mi Hamburguesa \n";
+	cout <<"2. Elegir del menu \n";
+
+
+
+
+}
