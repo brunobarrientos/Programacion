@@ -1,23 +1,122 @@
-// Proyectopapiburguer.cpp : Defines the entry point for the console application.
+// papis.cpp : Defines the entry point for the console application.
 //
-//
-// Profe se me borro el avance con estas maquinas, la idea es que el cliente entre al programa y pueda armar su propia hamburguesa o elegir una pre armada del menu
-//
+
 #include "stdafx.h"
 #include <iostream>
 #include "conio.h"
 #define MAX 100
-using namespace std;
+using namespace std; //asdfasdufasdufgsdfg
 
-void main
+#include <string.h>
+
+void cargarvector (int a[],int tam);
+void mostrarvector (int a[], int tam);
+void armarhamburguesa (char a[], int tam);
+void elegirmenu();
+
+void main ()
 {	
-	char a[MAX], tam;
+	float a[MAX],cantveg[MAX];
+	int tam,opcion0,opcion1,opcion2,opcion3,x;
 	cout <<"Bienvenido a Papi's Burger \n";
 	cout <<"Usted puede armar su hamburguesa al gusto! o si gusta elegir de nuestro menu:\n";
 	cout <<"1. Armar mi Hamburguesa \n";
 	cout <<"2. Elegir del menu \n";
+	cin>>opcion0;
+	switch (opcion0)
+	{
+	case 1 : {
+				cout<<"falta funcion armar"; //armarhamburguesa(a,tam);
+			 }
 
-
-
-
+	case 2: {
+				cout<<"falta funcion menu";// elegirmenu();
+			}
+	    default: cout << "Opcion invalida" << endl;
+	}
+getch();
 }
+
+void armarhamburguesa (float a[],int tam)
+{
+	int opcion, cantveg[MAX];
+	int veges;
+	cout<<"Cual de nuestras carnes gustaria?"<<endl;
+	cout<<"1. Carne de Res (100g, 200g, 300g)"<<endl;
+	cout<<"2. Carne de Pollo (100g, 200g, 300g)"<<endl;
+	cout<<"1. Carne de pescado (150g)"<<endl;
+	cin>>opcion;
+	switch (opcion)
+	{
+	case 1:
+		{
+			int carne, pan, ensalada,queso, extras,veges;
+			
+			///////////////////////////////////////////////
+			cout<<"Que tamaño de su carne?"<<endl;
+			cout<<"1. 100gr"<<endl;
+			cout<<"2. 200gr"<<endl;
+			cout<<"3. 300gr"<<endl;
+			cin>>carne;
+			switch (tam)
+			{
+			case 1: a[0]=1; break; // primer numero refiere a la primer pregunta, segundo numero se refiere a la eleccion.
+			case 2: a[0]=2; break;
+			case 3: a[0]=3; break;
+			}
+			///////////////////////////////////////////////
+			cout<<"Que pan es de su preferencia?"<<endl;
+			cout<<"1. Integral"<<endl;
+			cout<<"2. Clasico"<<endl;
+			cin>>pan;
+			switch (pan)
+			{
+			case 1: a[1]=1; break; // 21=integral
+			case 2: a[1]=2; break; // 22=clasico
+			}
+			///////////////////////////////////////////////
+			
+			cout<<"Cuantas piezas de vegetales?"<<endl;
+			cin>>veges;
+
+			while ((0>veges)||(10>veges))
+			{
+				cout<<"disponemos de 10 variedades, cuantas desea?";
+				cin>>veges;
+			}
+
+
+			switch (veges)
+			{
+			case 1: cantveg[0]=21; break; // 21=integral
+			case 2: cantveg[0]=22; break; // 22=clasico
+			}
+
+
+
+
+
+
+			cout<<"Que vegetales en la hamburguesa?"<<endl;
+			cout<<"1. Tomate Deshidratado"<<endl;
+			cout<<"2. Lechuga"<<endl;
+			cin>>pan;
+			switch (pan)
+			{
+			case 1: a[0]=21; break; // 21=integral
+			case 2: a[0]=22; break; // 22=clasico
+			}
+
+
+
+		}
+	}
+}
+
+	
+void elegirmenu()
+{
+	cout<<"a";
+}
+
+
