@@ -5,13 +5,13 @@
 #include <iostream>
 #include "conio.h"
 #define MAX 100
-using namespace std; //asdfasdufasdufgsdfg
+using namespace std; 
 
 #include <string.h>
 
 void cargarvector (int a[],int tam);
 void mostrarvector (int a[], int tam);
-void armarhamburguesa (char a[], int tam);
+void armarhamburguesa (float a[]);
 void elegirmenu();
 
 void main ()
@@ -37,10 +37,9 @@ void main ()
 getch();
 }
 
-void armarhamburguesa (float a[],int tam)
+void armarhamburguesa (float a[])
 {
-	int opcion, cantveg[MAX];
-	int veges;
+	int opcion,carne,pollo,pan,nveges;
 	cout<<"Cual de nuestras carnes gustaria?"<<endl;
 	cout<<"1. Carne de Res (100g, 200g, 300g)"<<endl;
 	cout<<"2. Carne de Pollo (100g, 200g, 300g)"<<endl;
@@ -50,47 +49,68 @@ void armarhamburguesa (float a[],int tam)
 	{
 	case 1:
 		{
-			int carne, pan, ensalada,queso, extras,veges;
-			
-			///////////////////////////////////////////////
-			cout<<"Que tamaño de su carne?"<<endl;
+		cout<<"De cuantos gramos su filete de Res?"<<endl;
 			cout<<"1. 100gr"<<endl;
 			cout<<"2. 200gr"<<endl;
 			cout<<"3. 300gr"<<endl;
 			cin>>carne;
-			switch (tam)
+			switch (carne)
 			{
 			case 1: a[0]=1; break; // primer numero refiere a la primer pregunta, segundo numero se refiere a la eleccion.
 			case 2: a[0]=2; break;
 			case 3: a[0]=3; break;
 			}
-			///////////////////////////////////////////////
-			cout<<"Que pan es de su preferencia?"<<endl;
-			cout<<"1. Integral"<<endl;
-			cout<<"2. Clasico"<<endl;
-			cin>>pan;
-			switch (pan)
-			{
-			case 1: a[1]=1; break; // 21=integral
-			case 2: a[1]=2; break; // 22=clasico
+			break;
+		}
+	case 2: {
+			cout<<"De cuantos gramos su filete de pollo?"<<endl;
+			cout<<"1. 100gr"<<endl;
+			cout<<"2. 200gr"<<endl;
+			cout<<"3. 300gr"<<endl;
+			cin>>pollo;
+				switch (pollo)
+				{
+				case 1: a[0]=4; break; // primer numero refiere a la primer pregunta, segundo numero se refiere a la eleccion.
+				case 2: a[0]=5; break;
+				case 3: a[0]=6; break;
+				}
+			break;
 			}
-			///////////////////////////////////////////////
-			
-			cout<<"Cuantas piezas de vegetales?"<<endl;
-			cin>>veges;
-
-			while ((0>veges)||(10>veges))
-			{
-				cout<<"disponemos de 10 variedades, cuantas desea?";
-				cin>>veges;
+	case 3: {
+			 cout<<"Eligio Filete de pescado de 150g"<<endl;
+			 a[0]=7;
+			break;
 			}
 
+	}
+	cout<<"Que pan gustaria degustar?"<<endl;
+	cout<<"1. Integral"<<endl;
+	cout<<"2. Clasico"<<endl;
+	cin>>pan;
+	switch (pan)
+	{
+	case 1: a[1]=1; break;
+	case 2: a[1]=2; break;
+	}
+	
+	cout<<"Cuantas piezas de vegetales?"<<endl;
+	cin>>nveges;
+	while ((0>nveges)||(10>nveges))
+	{
+		cout<<"disponemos de 10 variedades, cuantas desea?";
+		cin>>nveges;
+	}
+	for(int i=0;i<nveges;i++)
+	cout<<"escriba el numero correspondiente a los vegetales deseados";
 
-			switch (veges)
-			{
-			case 1: cantveg[0]=21; break; // 21=integral
-			case 2: cantveg[0]=22; break; // 22=clasico
-			}
+	////////////////////////////////////////
+	////////////////////////////////////
+	cin>>nveges;
+	switch ()
+	{
+		case 1: cantveg[0]=21; break; // 21=integral
+		case 2: cantveg[0]=22; break; // 22=clasico
+	}
 
 
 
@@ -118,5 +138,4 @@ void elegirmenu()
 {
 	cout<<"a";
 }
-
 
