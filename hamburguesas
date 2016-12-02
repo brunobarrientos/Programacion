@@ -13,38 +13,51 @@ void cargarvector (int a[],int tam);
 void mostrarvector (int a[], int tam);
 void armarhamburguesa (float a[]);
 void elegirmenu();
+void presentarhamburguesa(float a[], float vegetales[]);
 
 void main ()
 {	
-	float a[MAX],cantveg[MAX];
-	int tam,opcion0,opcion1,opcion2,opcion3,x;
+	float a[MAX], vegetales[MAX];
+	int opcion0,contvege=0;
 	cout <<"Bienvenido a Papi's Burger \n";
 	cout <<"Usted puede armar su hamburguesa al gusto! o si gusta elegir de nuestro menu:\n";
 	cout <<"1. Armar mi Hamburguesa \n";
 	cout <<"2. Elegir del menu \n";
 	cin>>opcion0;
+			while(opcion0<0||opcion0>2)
+			{	 cout<<"Ingrese un numero valido del menu o ingrese 0 para salir:"<<endl;
+				 cin>>opcion0;
+			}
 	switch (opcion0)
 	{
 	case 1 : {
-				cout<<"falta funcion armar"; //armarhamburguesa(a,tam);
+				armarhamburguesa(a,vegetales,contvege);
+				break;
 			 }
 
 	case 2: {
 				cout<<"falta funcion menu";// elegirmenu();
+			break;
 			}
-	    default: cout << "Opcion invalida" << endl;
+	default: cout << "Eligio salir" << endl;
 	}
-getch();
+	presentarhamburguesa(a,vegetales);
+
+_getch();
 }
 
-void armarhamburguesa (float a[])
+void armarhamburguesa (float a[],float vegetales[],int contvege)
 {
-	int opcion,carne,pollo,pan,nveges;
+	int opcion,carne,pollo,pan,vegetaln=0,aux0,aux1=0;
 	cout<<"Cual de nuestras carnes gustaria?"<<endl;
 	cout<<"1. Carne de Res (100g, 200g, 300g)"<<endl;
 	cout<<"2. Carne de Pollo (100g, 200g, 300g)"<<endl;
-	cout<<"1. Carne de pescado (150g)"<<endl;
+	cout<<"3. Carne de pescado (150g)"<<endl;
 	cin>>opcion;
+			while(opcion<0||opcion>4)
+			{	 cout<<"Ingrese un numero valido del menu o ingrese 0 para salir:"<<endl;
+				 cin>>opcion;
+			}
 	switch (opcion)
 	{
 	case 1:
@@ -83,7 +96,7 @@ void armarhamburguesa (float a[])
 			}
 
 	}
-	cout<<"Que pan gustaria degustar?"<<endl;
+	cout<<endl<<"Que pan quiere degustar?"<<endl;
 	cout<<"1. Integral"<<endl;
 	cout<<"2. Clasico"<<endl;
 	cin>>pan;
@@ -93,49 +106,40 @@ void armarhamburguesa (float a[])
 	case 2: a[1]=2; break;
 	}
 	
-	cout<<"Cuantas piezas de vegetales?"<<endl;
-	cin>>nveges;
-	while ((0>nveges)||(10>nveges))
+	cout<<endl<<"Tenemos una variedad de piezas a elegir, como tambien especialidades de la casa:"<<endl;
+	cout<<"Escriba numero de la pieza que desea, la hamburguesa se armara en ese orden, caundo este satisfecho ingrese 0."<<endl;
+	cout<<"1.Tomate A\n2.Tomate B\n3.Tomate C\n4.Lechuga A\n5.Lechuga B\n6.Pepinillos\n7.Cebolla A\n8.Cebolla B\n9.Papitas Crunch\n0.No deseo elegir mas."<<endl;
+	cout<<"Deseo la pieza:"<<endl;
+	cin>>vegetaln;
+	vegetales[aux1]=vegetaln;
+	while (!(vegetaln==0))
 	{
-		cout<<"disponemos de 10 variedades, cuantas desea?";
-		cin>>nveges;
-	}
-	for(int i=0;i<nveges;i++)
-	cout<<"escriba el numero correspondiente a los vegetales deseados";
-
-	////////////////////////////////////////
-	////////////////////////////////////
-	cin>>nveges;
-	switch ()
-	{
-		case 1: cantveg[0]=21; break; // 21=integral
-		case 2: cantveg[0]=22; break; // 22=clasico
-	}
-
-
-
-
-
-
-			cout<<"Que vegetales en la hamburguesa?"<<endl;
-			cout<<"1. Tomate Deshidratado"<<endl;
-			cout<<"2. Lechuga"<<endl;
-			cin>>pan;
-			switch (pan)
-			{
-			case 1: a[0]=21; break; // 21=integral
-			case 2: a[0]=22; break; // 22=clasico
+		aux1=aux1+1;
+		cout<<endl<<"siguiente pieza?: ";
+		cin>>vegetaln;
+			while(vegetaln<0||vegetaln>10)
+			{	 cout<<"Ingrese un numero valido del menu:"<<endl;
+				 cin>>vegetaln;
 			}
-
-
-
-		}
+		vegetales[aux1]=vegetaln;
 	}
+	cout<<"Eligio salir, habiendo elegido "<<aux1<<" piezas y";
+	cout<<"las piezas elegidas fueron: ";
+	while (contvege<aux1)
+	{
+		cout<<vegetales[contvege]<<", ";
+	}
+
 }
 
-	
-void elegirmenu()
+void presentarhamburguesa(float a[], float vegetales[],tamvege)
 {
-	cout<<"a";
-}
+	for (int i;i<tamvege;i++)
+		vegetales[i]
 
+
+	//////////////////////////////////////// 
+	//
+	//		cout<<"1. Tomate Deshidratado"<<endl;
+	//		cout<<"2. Lechuga"<<endl;
+	////////////////////////////////////
